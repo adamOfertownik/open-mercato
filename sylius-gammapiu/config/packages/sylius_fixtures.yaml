@@ -1,0 +1,1048 @@
+# Sylius Fixtures Suite for Gamma Piu Polska Store
+# Generated from gammapiu-polska.pl product catalog
+sylius_fixtures:
+    suites:
+        gamma_piu_polska:
+            listeners:
+                logger: ~
+            fixtures:
+                locale:
+                    options:
+                        locales:
+                            - pl_PL
+                            - en_US
+                currency:
+                    options:
+                        currencies:
+                            - PLN
+                            - EUR
+                geo:
+                    options:
+                        countries:
+                            - PL
+                            - DE
+                zone:
+                    options:
+                        custom:
+                            PL:
+                                name: "Polska"
+                                type: country
+                                members:
+                                    - PL
+                channel:
+                    options:
+                        custom:
+                            GAMMA_PIU_PL:
+                                code: "GAMMA_PIU_PL"
+                                name: "Gamma Piu Polska"
+                                hostname: "gammapiu.localhost"
+                                color: "#111111"
+                                default_locale: "pl_PL"
+                                locales:
+                                    - "pl_PL"
+                                    - "en_US"
+                                base_currency: "PLN"
+                                currencies:
+                                    - "PLN"
+                                    - "EUR"
+                                tax_calculation_strategy: "order_items_based"
+                tax_category:
+                    options:
+                        custom:
+                            standard:
+                                code: "TAX_23"
+                                name: "VAT 23%"
+                tax_rate:
+                    options:
+                        custom:
+                            vat_pl_23:
+                                code: "VAT_PL_23"
+                                name: "VAT 23% (PL)"
+                                zone: "PL"
+                                category: "TAX_23"
+                                amount: 23%
+                                included_in_price: true
+                shipping_category:
+                    options:
+                        custom:
+                            standard:
+                                code: "STANDARD_SHIPPING"
+                                name: "Standard"
+                shipping_method:
+                    options:
+                        custom:
+                            inpost_paczkomat:
+                                code: "INPOST_PACZKOMAT"
+                                name: "Paczkomaty InPost 24/7"
+                                zone: "PL"
+                                category: "STANDARD_SHIPPING"
+                                channels: ["GAMMA_PIU_PL"]
+                                configuration:
+                                    GAMMA_PIU_PL:
+                                        amount: 1499
+                            kurier_dpd:
+                                code: "KURIER_DPD"
+                                name: "Kurier DPD / InPost Kurier"
+                                zone: "PL"
+                                category: "STANDARD_SHIPPING"
+                                channels: ["GAMMA_PIU_PL"]
+                                configuration:
+                                    GAMMA_PIU_PL:
+                                        amount: 1899
+                            odbior_osobisty:
+                                code: "ODBIOR_OSOBISTY"
+                                name: "Odbiór osobisty (Wejherowo)"
+                                zone: "PL"
+                                category: "STANDARD_SHIPPING"
+                                channels: ["GAMMA_PIU_PL"]
+                                configuration:
+                                    GAMMA_PIU_PL:
+                                        amount: 0
+                payment_method:
+                    options:
+                        custom:
+                            przelewy24:
+                                code: "P24_BLIK"
+                                name: "Przelewy24 / BLIK / Szybki Przelew"
+                                gatewayFactory: "offline"
+                                channels: ["GAMMA_PIU_PL"]
+                                enabled: true
+                            payu:
+                                code: "PAYU"
+                                name: "Płatność PayU / Karty płatnicze"
+                                gatewayFactory: "offline"
+                                channels: ["GAMMA_PIU_PL"]
+                                enabled: true
+                            pobranie:
+                                code: "COD"
+                                name: "Płatność przy odbiorze (Pobranie)"
+                                gatewayFactory: "offline"
+                                channels: ["GAMMA_PIU_PL"]
+                                enabled: true
+                taxon:
+                    options:
+                        custom:
+                            category:
+                                code: "CATEGORY"
+                                name: "Kategorie"
+                                children:
+                                    urzadzenia-fryzjerskie:
+                                        code: "EQUIPMENT"
+                                        name: "Urządzenia fryzjerskie"
+                                        children:
+                                            maszynki:
+                                                code: "CLIPPERS"
+                                                name: "Maszynki do strzyżenia"
+                                            suszarki:
+                                                code: "DRYERS"
+                                                name: "Suszarki do włosów"
+                                            trymery:
+                                                code: "TRIMMERS"
+                                                name: "Trymery"
+                                            golarki:
+                                                code: "SHAVERS"
+                                                name: "Golarki"
+                                            prostownice:
+                                                code: "STRAIGHTENERS"
+                                                name: "Prostownice do włosów"
+                                            lokowki:
+                                                code: "CURLERS"
+                                                name: "Lokówki i falownice"
+                                    czesci-eksploatacyjne:
+                                        code: "PARTS"
+                                        name: "Ostrza i części zamienne"
+                                    akcesoria:
+                                        code: "ACCESSORIES"
+                                        name: "Akcesoria fryzjerskie"
+                                    zestawy-promocyjne:
+                                        code: "SETS"
+                                        name: "Zestawy promocyjne"
+                                    outlet:
+                                        code: "OUTLET"
+                                        name: "Outlet"
+                product_attribute:
+                    options:
+                        custom:
+                            brand:
+                                code: "BRAND"
+                                name: "Marka"
+                                type: "text"
+                            motor:
+                                code: "MOTOR_TYPE"
+                                name: "Rodzaj silnika"
+                                type: "text"
+                            warranty:
+                                code: "WARRANTY"
+                                name: "Gwarancja"
+                                type: "text"
+                product:
+                    options:
+                        custom:
+                            PROD_MASZYNKA_STYLE_CRAFT_REIGN:
+                                code: "PROD_MASZYNKA_STYLE_CRAFT_REIGN"
+                                name: "Maszynka StyleCraft REIGN"
+                                slug: "maszynka-style-craft-reign"
+                                tax_category: "TAX_23"
+                                main_taxon: "CLIPPERS"
+                                taxons: ["CLIPPERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Profesjonalna maszynka do strzyżenia włosów Reign z bezszczotkowym silnikiem cyfrowym EON"
+                                description: "STYLECRAFT REIGN to profesjonalna maszynka do strzyżenia stworzona z myślą o maksymalnej wydajności, precyzji i komforcie pracy. Wyposażona w bezszczotkowy silnik cyfrowy EON, ostrze Premium Echo Taper DLC oraz wydajny akumulator litowo-jonowy, zapewnia płynne, ciche i niezwykle precyzyjne cięcie po..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 119900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/922/minigallery/thumb_8b4176333a699d9e8509c5c99bbff2a0.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/922/minigallery/thumb_xlarge_8b4176333a699d9e8509c5c99bbff2a0.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/922/minigallery/original_8b4176333a699d9e8509c5c99bbff2a0.jpg"
+                            PROD_TRYMER_STYLE_CRAFT_REIGN:
+                                code: "PROD_TRYMER_STYLE_CRAFT_REIGN"
+                                name: "Trymer StyleCraft REIGN "
+                                slug: "trymer-style-craft-reign"
+                                tax_category: "TAX_23"
+                                main_taxon: "TRIMMERS"
+                                taxons: ["TRIMMERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Profesjonalny trymer do strzyżenia włosów Reign z bezszczotkowym silnikiem cyfrowym EON"
+                                description: "STYLECRAFT REIGN to profesjonalny trymer zaprojektowany z myślą o maksymalnej precyzji, wydajności i komforcie pracy. Wyposażony w bezszczotkowy silnik cyfrowy EON, szerokie ostrze Diamond Cut Black DLC oraz ergonomiczną konstrukcję, zapewnia płynne, ciche i niezwykle dokładne wykończenie każdej sty..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 94900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/921/minigallery/thumb_56ae29ffe73e83a3d38557e4f9bb4b0b.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/921/minigallery/thumb_xlarge_56ae29ffe73e83a3d38557e4f9bb4b0b.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/921/minigallery/original_56ae29ffe73e83a3d38557e4f9bb4b0b.jpg"
+                            PROD_MASZYNKA_ALPHA_UP:
+                                code: "PROD_MASZYNKA_ALPHA_UP"
+                                name: "Maszynka Alpha Up"
+                                slug: "maszynka-alpha-up"
+                                tax_category: "TAX_23"
+                                main_taxon: "CLIPPERS"
+                                taxons: ["CLIPPERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Profesjonalna modułowa maszynka do strzyżenia z silnikiem rotacyjnym."
+                                description: "ALPHA UP to profesjonalna maszynka do strzyżenia zaprojektowana z myślą o najwyższej wydajności, precyzji i komforcie pracy. Dzięki technologii Upgrade Performance, wydajnemu silnikowi DC oraz ostrzu Faper Blue Titanium, zapewnia płynne, precyzyjne cięcie i niezawodność nawet podczas intensywnego uż..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 64900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/918/minigallery/thumb_a8eacb07a0ae766ea4f15b275e86a787.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/918/minigallery/thumb_xlarge_a8eacb07a0ae766ea4f15b275e86a787.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/918/minigallery/original_a8eacb07a0ae766ea4f15b275e86a787.png"
+                            PROD_GOLARKA_BOOSTED_ONE_FOIL:
+                                code: "PROD_GOLARKA_BOOSTED_ONE_FOIL"
+                                name: "Golarka Boosted One Foil "
+                                slug: "golarka-boosted-one-foil"
+                                tax_category: "TAX_23"
+                                main_taxon: "SHAVERS"
+                                taxons: ["SHAVERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Profesjonalna golarka do precyzyjnego wykańczania"
+                                description: "BOOSTED ONE to profesjonalna golarka stworzona z myślą o perfekcyjnym wykończeniu, precyzyjnym goleniu oraz maksymalnym komforcie pracy. Wyposażona w wydajny silnik 9000 obr./min, ultracienką hipoalergiczną folię Gold Titanium oraz kompaktową głowicę, zapewnia niezwykle dokładne rezultaty nawet w tr..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 36900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/920/minigallery/thumb_3e053ae0e519a534a44e597c5a6d88d8.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/920/minigallery/thumb_xlarge_3e053ae0e519a534a44e597c5a6d88d8.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/920/minigallery/original_3e053ae0e519a534a44e597c5a6d88d8.png"
+                            PROD_GAMMA_X_CELL_S:
+                                code: "PROD_GAMMA_X_CELL_S"
+                                name: "Suszarka XCell S - różowe złoto"
+                                slug: "gamma-x-cell-s"
+                                tax_category: "TAX_23"
+                                main_taxon: "DRYERS"
+                                taxons: ["DRYERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Ultra-zaawansowana technologia suszenia"
+                                description: "Gamma Più XCell S to usprawniona wersja ultra-zaawansowanej suszarki włoskiego producenta. Urządzenie to wyróżnia się spośród innych wykorzystaniem sztucznej inteligencji dla zarządzania temperaturą wydmuchiwanego powietrza. Zaawansowany silnik cyfrowy G-Tron o prędkości 120.000 RPM zapewnia trwalsz..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 129900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/198/minigallery/thumb_e7702eeac33ed04ad59288be4e8a9419.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/198/minigallery/thumb_xlarge_e7702eeac33ed04ad59288be4e8a9419.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/198/minigallery/original_e7702eeac33ed04ad59288be4e8a9419.jpg"
+                            PROD_GAMMA_X_CELL_S_1:
+                                code: "PROD_GAMMA_X_CELL_S_1"
+                                name: "Suszarka XCell S - czarny"
+                                slug: "gamma-x-cell-s-1"
+                                tax_category: "TAX_23"
+                                main_taxon: "DRYERS"
+                                taxons: ["DRYERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Ultra-zaawansowana technologia suszenia"
+                                description: "Gamma Più XCell S to usprawniona wersja ultra-zaawansowanej suszarki włoskiego producenta. Urządzenie to wyróżnia się spośród innych wykorzystaniem sztucznej inteligencji dla zarządzania temperaturą wydmuchiwanego powietrza. Zaawansowany silnik cyfrowy G-Tron o prędkości 120.000 RPM zapewnia trwalsz..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 129900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/199/minigallery/thumb_28a37880df59f64e6dc47106a6f294c3.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/199/minigallery/thumb_xlarge_28a37880df59f64e6dc47106a6f294c3.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/199/minigallery/original_28a37880df59f64e6dc47106a6f294c3.jpg"
+                            PROD_GAMMA_BARBER_PHON_1:
+                                code: "PROD_GAMMA_BARBER_PHON_1"
+                                name: "Suszarka Barber Phon - czarny"
+                                slug: "gamma-barber-phon-1"
+                                tax_category: "TAX_23"
+                                main_taxon: "DRYERS"
+                                taxons: ["DRYERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Specjalnie dla Barberów"
+                                description: "Gamma Più Barber Phon to profesjonalna suszarka zaprojektowana specjalnie dla barberów. Oryginalny design w stylu industrialnym / retro świetnie sprawdza się w barberskich aranżacjach salonów. Poziomy nawiewów i temperatury zostały zaprojektowane tak, aby zapewnić idealne suszenie brody i wąsów oraz..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 49900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/54/minigallery/thumb_1383a15ad624878f68ffcf923f79b283.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/54/minigallery/thumb_xlarge_1383a15ad624878f68ffcf923f79b283.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/54/minigallery/original_1383a15ad624878f68ffcf923f79b283.jpg"
+                            PROD_GAMMA_PLASMA_NEW:
+                                code: "PROD_GAMMA_PLASMA_NEW"
+                                name: "Suszarka Plasma Bactericidal"
+                                slug: "gamma-plasma-new"
+                                tax_category: "TAX_23"
+                                main_taxon: "DRYERS"
+                                taxons: ["DRYERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Działanie bakteriobójcze i odkażające"
+                                description: "Gamma Più Plasma Bactericidal to jedyna na świecie suszarka do włosów z aktywatorem Active Oxygen: specjalna lampa UV aktywuje powietrze, zamieniając je w aktywny tlen. Proces suszenia staje się zabiegiem upiększającym i poprawiającym wygląd włosów. Dodatkowo urządzenie zostało wyposażone w generato..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 74900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/46/minigallery/thumb_f92ec2edfedf7c9f0b00b5dd63347653.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/46/minigallery/thumb_xlarge_f92ec2edfedf7c9f0b00b5dd63347653.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/46/minigallery/original_f92ec2edfedf7c9f0b00b5dd63347653.jpg"
+                            PROD_GAMMA_ARIA_DUAL_IONIC_2:
+                                code: "PROD_GAMMA_ARIA_DUAL_IONIC_2"
+                                name: "Suszarka Aria Dual Ionic - szary tortora"
+                                slug: "gamma-aria-dual-ionic-2"
+                                tax_category: "TAX_23"
+                                main_taxon: "DRYERS"
+                                taxons: ["DRYERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Koncentrat włoskiej technologii"
+                                description: "Gamma Più Aria Dual Ionic to prawdziwy koncentrat włoskiej technologii suszenia włosów. Suszarka została wyposażona w najlepsze podzespoły włoskiego producenta, które razem tworzą spójną całość i pozwalają na szybką, kompletną, a przede wszystkim - łatwą pracę. Cechy produktu: Generator jonów z włąc..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 39900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/49/minigallery/thumb_36033ea6e7cd7336cc95ad74939287f1.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/49/minigallery/thumb_xlarge_36033ea6e7cd7336cc95ad74939287f1.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/49/minigallery/original_36033ea6e7cd7336cc95ad74939287f1.jpg"
+                            PROD_SUSZARKA_X_CEED_CZARNY:
+                                code: "PROD_SUSZARKA_X_CEED_CZARNY"
+                                name: "Suszarka XCEED - czarny"
+                                slug: "suszarka-x-ceed-czarny"
+                                tax_category: "TAX_23"
+                                main_taxon: "DRYERS"
+                                taxons: ["DRYERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Zaawansowana profesjonalna suszarka do włosów z potrójną zintegrowaną technologią"
+                                description: "XCEED to profesjonalna suszarka nowej generacji, stworzona z myślą o maksymalnej wydajności, ochronie włosów i komforcie pracy. Dzięki technologiom Active Oxygen, Infrared oraz Ion Generator, cyfrowemu silnikowi 120 000 obr./min i inteligentnym funkcjom zapewnia szybsze suszenie, większą kontrolę or..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 159900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/917/minigallery/thumb_13a1fc3e3f5f33f697d4e392ff27f721.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/917/minigallery/thumb_xlarge_13a1fc3e3f5f33f697d4e392ff27f721.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/917/minigallery/original_13a1fc3e3f5f33f697d4e392ff27f721.png"
+                            PROD_MASZYNKA_XCEED:
+                                code: "PROD_MASZYNKA_XCEED"
+                                name: "Maszynka XCEED"
+                                slug: "maszynka-xceed"
+                                tax_category: "TAX_23"
+                                main_taxon: "CLIPPERS"
+                                taxons: ["CLIPPERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                description: "Gamma Più XCEED to maszynka z nowej gamy produktów charakteryzującej się najlepszymi komponentami od włoskiej marki. Te urządzenia to świadectwo bezkompromisowego podejścia do strzyżenia włosów. Maszynka została wyposażona w silnik wektorowy IN2 o potężnej prędkości i mocy, dzięki czemu strzyżenie j..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 129900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/897/minigallery/thumb_581bce11c2538e15b766b00537f381ab.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/897/minigallery/thumb_xlarge_581bce11c2538e15b766b00537f381ab.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/897/minigallery/original_581bce11c2538e15b766b00537f381ab.png"
+                            PROD_MASZYNKA_STYLECRAFT_SABER_II_C:
+                                code: "PROD_MASZYNKA_STYLECRAFT_SABER_II_C"
+                                name: "Maszynka StyleCraft Saber II - czarny"
+                                slug: "maszynka-stylecraft-saber-ii-czarny"
+                                tax_category: "TAX_23"
+                                main_taxon: "CLIPPERS"
+                                taxons: ["CLIPPERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Idealne połączenie mocy, precyzji i luksusu"
+                                description: "StyleCraft Saber II to profesjonalna bezprzewodowa maszynka do strzyżenia włosów z silnikiem bezszczotkowym o wysokim momencie obrotowym. Jest to idealne połączenie mocy, precyzji i luksusu, zaprojektowane, aby podnieść jakość Twojej pielęgnacji. Idealna zarówno dla profesjonalnych stylistów, jak i ..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 124900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/798/minigallery/thumb_d175ea806482ad1b391580858efc0e5b.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/798/minigallery/thumb_xlarge_d175ea806482ad1b391580858efc0e5b.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/798/minigallery/original_d175ea806482ad1b391580858efc0e5b.png"
+                            PROD_MASZYNKA_STYLECRAFT_SABER_II_Z:
+                                code: "PROD_MASZYNKA_STYLECRAFT_SABER_II_Z"
+                                name: "Maszynka StyleCraft Saber II - złoty"
+                                slug: "maszynka-stylecraft-saber-ii-zloty"
+                                tax_category: "TAX_23"
+                                main_taxon: "CLIPPERS"
+                                taxons: ["CLIPPERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Idealne połączenie mocy, precyzji i luksusu"
+                                description: "StyleCraft Saber II to profesjonalna bezprzewodowa maszynka do strzyżenia włosów z silnikiem bezszczotkowym o wysokim momencie obrotowym. Jest to idealne połączenie mocy, precyzji i luksusu, zaprojektowane, aby podnieść jakość Twojej pielęgnacji. Idealna zarówno dla profesjonalnych stylistów, jak i ..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 124900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/799/minigallery/thumb_73e6cea50a7bdeaba40c614a83405560.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/799/minigallery/thumb_xlarge_73e6cea50a7bdeaba40c614a83405560.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/799/minigallery/original_73e6cea50a7bdeaba40c614a83405560.png"
+                            PROD_MASZYNKA_STYLECRAFT_SABER_II_B:
+                                code: "PROD_MASZYNKA_STYLECRAFT_SABER_II_B"
+                                name: "Maszynka StyleCraft Saber II - biały"
+                                slug: "maszynka-stylecraft-saber-ii-bialy"
+                                tax_category: "TAX_23"
+                                main_taxon: "CLIPPERS"
+                                taxons: ["CLIPPERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Idealne połączenie mocy, precyzji i luksusu"
+                                description: "StyleCraft Saber II to profesjonalna bezprzewodowa maszynka do strzyżenia włosów z silnikiem bezszczotkowym o wysokim momencie obrotowym. Jest to idealne połączenie mocy, precyzji i luksusu, zaprojektowane, aby podnieść jakość Twojej pielęgnacji. Idealna zarówno dla profesjonalnych stylistów, jak i ..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 124900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/830/minigallery/thumb_f2392d19b40510f82ecf45370d89b977.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/830/minigallery/thumb_xlarge_f2392d19b40510f82ecf45370d89b977.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/830/minigallery/original_f2392d19b40510f82ecf45370d89b977.jpg"
+                            PROD_STYLECRAFT_SC_MASZYNKA_REBEL:
+                                code: "PROD_STYLECRAFT_SC_MASZYNKA_REBEL"
+                                name: "Maszynka StyleCraft Rebel "
+                                slug: "stylecraft-sc-maszynka-rebel"
+                                tax_category: "TAX_23"
+                                main_taxon: "CLIPPERS"
+                                taxons: ["CLIPPERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Najmocniejsza maszynka StyleCraft"
+                                description: "StyleCraft Rebel to najmocniejsza maszynka do strzyżenia amerykańskiego producenta. Dzięki większej mocy niż kiedykolwiek wcześniej, Rebel ma silnik obrotowy o super momencie obrotowym z 7.200 obrotami na minutę, a mimo to charakteryzuje się niskim poziomem hałasu i wibracji. Oferuje 3-godzinny czas..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 79900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/210/minigallery/thumb_0e16b5391b3d912a4d91d5df850ee7b1.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/210/minigallery/thumb_xlarge_0e16b5391b3d912a4d91d5df850ee7b1.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/210/minigallery/original_0e16b5391b3d912a4d91d5df850ee7b1.jpg"
+                            PROD_STYLECRAFT_SC_REBEL_1:
+                                code: "PROD_STYLECRAFT_SC_REBEL_1"
+                                name: "Golarka StyleCraft Rebel"
+                                slug: "stylecraft-sc-rebel-1"
+                                tax_category: "TAX_23"
+                                main_taxon: "SHAVERS"
+                                taxons: ["SHAVERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Najmocniejsza golarka StyleCraft"
+                                description: "Dołącz do rebelii! Golarka foliowa StyleCraft Rebel to najmocniejsza golarka amerykańskiego producenta i profesjonalny wybór do golenia twarzy, szyi lub skóry głowy na sucho. Idealna do wspomagania golenia i oczyszczania tyłu głowy. Idealna do szybkich poprawek na koniec dnia. Silnik o super wysokim..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 43900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/217/minigallery/thumb_7ef08eb98c1f0cb052328aff04ec7339.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/217/minigallery/thumb_xlarge_7ef08eb98c1f0cb052328aff04ec7339.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/217/minigallery/original_7ef08eb98c1f0cb052328aff04ec7339.jpg"
+                            PROD_TRYMER_HITTER_UP:
+                                code: "PROD_TRYMER_HITTER_UP"
+                                name: "Trymer Hitter Up"
+                                slug: "trymer-hitter-up"
+                                tax_category: "TAX_23"
+                                main_taxon: "TRIMMERS"
+                                taxons: ["TRIMMERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Profesjonalny trymer do detali z silnikiem rotacyjnym."
+                                description: "HITTER UP to profesjonalny trymer stworzony z myślą o maksymalnej precyzji, wydajności i komforcie pracy. Wyposażony w nowy system ochrony ostrza, wydajny silnik DC oraz ostrze X-PRO Blue Titanium, zapewnia płynne, dokładne cięcie i niezawodność podczas codziennego użytkowania. Możliwość personaliza..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 54900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/919/minigallery/thumb_8d485f445c93d37ca66af689cbf4f132.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/919/minigallery/thumb_xlarge_8d485f445c93d37ca66af689cbf4f132.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/919/minigallery/original_8d485f445c93d37ca66af689cbf4f132.png"
+                            PROD_ZESTAW_XCELL_S_CURLSWAVES_CZAR:
+                                code: "PROD_ZESTAW_XCELL_S_CURLSWAVES_CZAR"
+                                name: "Zestaw XCell S + Curls&Waves - czarny "
+                                slug: "zestaw-xcell-s-curlswaves-czarny"
+                                tax_category: "TAX_23"
+                                main_taxon: "SETS"
+                                taxons: ["SETS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Kompletny zestaw do suszenia i stylizacji włosów, łączący wydajną suszarkę XCELL S z cylindrami Curls & Waves do tworzenia naturalnych fal i sprężystych loków. Idealny do profesjonalnego użytku."
+                                description: "Gamma+ XCELL S + Curls & Waves to profesjonalny zestaw do suszenia i stylizacji włosów, który łączy wydajność nowoczesnej suszarki z precyzją akcesoriów do tworzenia loków i fal. Ultralekka suszarka XCELL S z cyfrowym silnikiem G-Tron oraz technologią jonową zapewnia szybkie suszenie i ochronę włosó..."
+                                product_attributes:
+                                    BRAND: "Gamma Piu"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 130000
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/952/minigallery/thumb_618317bd6e5aec3de484e61abf9a3d63.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/952/minigallery/thumb_xlarge_618317bd6e5aec3de484e61abf9a3d63.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/952/minigallery/original_618317bd6e5aec3de484e61abf9a3d63.jpg"
+                            PROD_ZESTAW_XCELL_S_CURLSWAVES_ROSE:
+                                code: "PROD_ZESTAW_XCELL_S_CURLSWAVES_ROSE"
+                                name: "Zestaw XCell S + Curls&Waves - rose gold "
+                                slug: "zestaw-xcell-s-curlswaves-rose-gold"
+                                tax_category: "TAX_23"
+                                main_taxon: "SETS"
+                                taxons: ["SETS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Kompletny zestaw do suszenia i stylizacji włosów, łączący wydajną suszarkę XCELL S z cylindrami Curls & Waves do tworzenia naturalnych fal i sprężystych loków. Idealny do profesjonalnego użytku."
+                                description: "Gamma+ XCELL S + Curls & Waves to profesjonalny zestaw do suszenia i stylizacji włosów, który łączy wydajność nowoczesnej suszarki z precyzją akcesoriów do tworzenia loków i fal. Ultralekka suszarka XCELL S z cyfrowym silnikiem G-Tron oraz technologią jonową zapewnia szybkie suszenie i ochronę włosó..."
+                                product_attributes:
+                                    BRAND: "Gamma Piu"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 130000
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/951/minigallery/thumb_28e426b176571ef5924ebf50ccb52a6a.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/951/minigallery/thumb_xlarge_28e426b176571ef5924ebf50ccb52a6a.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/951/minigallery/original_28e426b176571ef5924ebf50ccb52a6a.jpg"
+                            PROD_ZESTAW_ABSOLUTE:
+                                code: "PROD_ZESTAW_ABSOLUTE"
+                                name: "Zestaw Absolute"
+                                slug: "zestaw-absolute"
+                                tax_category: "TAX_23"
+                                main_taxon: "SETS"
+                                taxons: ["SETS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Maszynka Alpha, Trymer Hitter, Golarka Zero"
+                                description: "Gamma Più Alpha to najbardziej popularna, bezprzewodowa maszynka włoskiego producenta. Dzięki silnikowi rotacyjnemu wysokiej jakości maszynka pracuje równo i gładko. W urządzeniu zastosowane zostały niezawodne ostrza: stałe Faper DLC i ruchome Shallow DLC. Pozycję ostrza można regulować w zakresie o..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 119900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/699/minigallery/thumb_77a78c265321477b95eabeb35c1244f0.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/699/minigallery/thumb_xlarge_77a78c265321477b95eabeb35c1244f0.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/699/minigallery/original_77a78c265321477b95eabeb35c1244f0.jpg"
+                            PROD_ZESTAW_INSTINCT:
+                                code: "PROD_ZESTAW_INSTINCT"
+                                name: "Zestaw Instinct"
+                                slug: "zestaw-instinct"
+                                tax_category: "TAX_23"
+                                main_taxon: "SETS"
+                                taxons: ["SETS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Maszynka Instinct, Trymer Instinct"
+                                description: "Maszynka StyleCraft Instinct to jedna z najpotężniejszych maszynek do strzyżenia włosów w historii. Urządzenie wyposażone jest w silnik wektorowy o prędkości 11.500 obr./min. Dzięki temu maszynka skraca czas i znacząco ułatwia i upłynnia pracę. Maszynka posiada kompaktową, lekką i ergonomiczną konst..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 159900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/698/minigallery/thumb_3ea48d57b08f717b88f275ca4e098cf6.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/698/minigallery/thumb_xlarge_3ea48d57b08f717b88f275ca4e098cf6.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/698/minigallery/original_3ea48d57b08f717b88f275ca4e098cf6.jpg"
+                            PROD_ZESTAW_NEO_PROTEGE:
+                                code: "PROD_ZESTAW_NEO_PROTEGE"
+                                name: "Zestaw Neo Protégé"
+                                slug: "zestaw-neo-protege"
+                                tax_category: "TAX_23"
+                                main_taxon: "EQUIPMENT"
+                                taxons: ["EQUIPMENT"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Profesjonalna maszynka i trymer do strzyżenia z wyświetlaczem cyfrowym i mocnym silnikiem DC"
+                                description: "NEO PROTÉGÉ to połączenie mocy, precyzji i nowoczesnego wzornictwa. Profesjonalna maszynka i trymer zostały wyposażone w inteligentny wyświetlacz LED, wydajny silnik DC oraz ostrza Black DLC, zapewniając maksymalną kontrolę, komfort pracy i niezawodne rezultaty. To kompletny zestaw stworzony dla pro..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 79900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/926/minigallery/thumb_8e94377a544bf9c1cb97bb569b26033a.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/926/minigallery/thumb_xlarge_8e94377a544bf9c1cb97bb569b26033a.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/926/minigallery/original_8e94377a544bf9c1cb97bb569b26033a.jpg"
+                            PROD_ZESTAW_CYBORG:
+                                code: "PROD_ZESTAW_CYBORG"
+                                name: "Zestaw Cyborg"
+                                slug: "zestaw-cyborg"
+                                tax_category: "TAX_23"
+                                main_taxon: "SETS"
+                                taxons: ["SETS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Maszynka Cyborg, Trymer Cyborg"
+                                description: "Maszynka Gamma Più Cyborg jest wykonana z wytrzymałego metalu i inspirowana przyszłością. Maszynka została wyposażona w stałe ostrze Black Diamond DLC Faper 45 mm z ruchomym ostrzem Slim Deep DLC, zapewnia gładkie cięcie, podczas gdy cyfrowy, bezszczotkowy silnik o prędkości 7500 obr./min generuje p..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 149900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/697/minigallery/thumb_2015daf70be7663457de1f2e8a77ff03.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/697/minigallery/thumb_xlarge_2015daf70be7663457de1f2e8a77ff03.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/697/minigallery/original_2015daf70be7663457de1f2e8a77ff03.jpg"
+                            PROD_ZESTAW_SABER_CZARNY:
+                                code: "PROD_ZESTAW_SABER_CZARNY"
+                                name: "Zestaw Saber - czarny"
+                                slug: "zestaw-saber-czarny"
+                                tax_category: "TAX_23"
+                                main_taxon: "SETS"
+                                taxons: ["SETS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Maszynka Saber II, Trymer Saber"
+                                description: "Maszynka StyleCraft Saber II to profesjonalna bezprzewodowa maszynka do strzyżenia włosów z silnikiem bezszczotkowym o wysokim momencie obrotowym. Jest to idealne połączenie mocy, precyzji i luksusu, zaprojektowane, aby podnieść jakość Twojej pielęgnacji. Idealna zarówno dla profesjonalnych stylistó..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 169900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/829/minigallery/thumb_881279ef033c4daecbf18c888ac5605a.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/829/minigallery/thumb_xlarge_881279ef033c4daecbf18c888ac5605a.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/829/minigallery/original_881279ef033c4daecbf18c888ac5605a.jpg"
+                            PROD_ZESTAW_SABER_BIALY:
+                                code: "PROD_ZESTAW_SABER_BIALY"
+                                name: "Zestaw Saber - biały"
+                                slug: "zestaw-saber-bialy"
+                                tax_category: "TAX_23"
+                                main_taxon: "SETS"
+                                taxons: ["SETS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Maszynka Saber II, Trymer Saber"
+                                description: "Maszynka StyleCraft Saber II to profesjonalna bezprzewodowa maszynka do strzyżenia włosów z silnikiem bezszczotkowym o wysokim momencie obrotowym. Jest to idealne połączenie mocy, precyzji i luksusu, zaprojektowane, aby podnieść jakość Twojej pielęgnacji. Idealna zarówno dla profesjonalnych stylistó..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 169900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/832/minigallery/thumb_02521ec1b5be80486c7221bcf4cfbb2e.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/832/minigallery/thumb_xlarge_02521ec1b5be80486c7221bcf4cfbb2e.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/832/minigallery/original_02521ec1b5be80486c7221bcf4cfbb2e.png"
+                            PROD_ZESTAW_XHORIZONCURLSWAVES:
+                                code: "PROD_ZESTAW_XHORIZONCURLSWAVES"
+                                name: "Zestaw  X•horizon + Curls&Waves - czarny"
+                                slug: "zestaw-xhorizoncurlswaves"
+                                tax_category: "TAX_23"
+                                main_taxon: "SETS"
+                                taxons: ["SETS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Gamma+ X-Horizon + Curls & Waves to profesjonalny zestaw do suszenia i stylizacji włosów. Wydajna suszarka z cyfrowym silnikiem G-Tron w połączeniu z aluminiowymi cylindrami do loków i fal pozwala szybko uzyskać trwałą, pełną objętości fryzurę, jednocześnie dbając o kondycję włosów."
+                                description: "Zestaw Gamma+ X-Horizon + Curls & Waves to komplet stworzony do szybkiej stylizacji i tworzenia perfekcyjnych loków oraz miękkich fal. Profesjonalna suszarka X-Horizon z cyfrowym silnikiem G-Tron zapewnia mocny i precyzyjny przepływ powietrza, a aluminiowe cylindry Curls & Waves umożliwiają łatwe mo..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 140000
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/949/minigallery/thumb_f2dc725c6c03b0dbd356422d41672d51.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/949/minigallery/thumb_xlarge_f2dc725c6c03b0dbd356422d41672d51.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/949/minigallery/original_f2dc725c6c03b0dbd356422d41672d51.jpg"
+                            PROD_PROSTOWNICA_DONNA_KERATIN_XCEE:
+                                code: "PROD_PROSTOWNICA_DONNA_KERATIN_XCEE"
+                                name: " Prostownica Donna+ Keratin & Xceed Cordless"
+                                slug: "prostownica-donna-keratin-xceed-cordless"
+                                tax_category: "TAX_23"
+                                main_taxon: "STRAIGHTENERS"
+                                taxons: ["STRAIGHTENERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Dwie ikony połączone w jednym ekskluzywnym rozwiązaniu"
+                                description: "DONNA+ KERATIN to profesjonalna prostownica stworzona z myślą o codziennej stylizacji oraz zabiegach keratynowego prostowania włosów. Dzięki wysokiej temperaturze pracy, inteligentnej kontroli ciepła oraz ceramicznym płytkom z dodatkiem proszku diamentowego zapewnia doskonałe rezultaty, chroniąc jed..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 89900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/930/minigallery/thumb_b5d666df869ab264baea0d458a5d9fa0.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/930/minigallery/thumb_xlarge_b5d666df869ab264baea0d458a5d9fa0.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/930/minigallery/original_b5d666df869ab264baea0d458a5d9fa0.jpg"
+                            PROD_OSTRZE_STALE_X_PRO_PVD_NIEBIES:
+                                code: "PROD_OSTRZE_STALE_X_PRO_PVD_NIEBIES"
+                                name: "Ostrze stałe X-Pro PVD niebieskie"
+                                slug: "ostrze-stale-x-pro-pvd-niebieskie"
+                                tax_category: "TAX_23"
+                                main_taxon: "TRIMMERS"
+                                taxons: ["TRIMMERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "kompatybilne z : Hitter Up, Cyborg trymer, Boosted trymer, Xceed trymer."
+                                description: "Ostrze X-PRO Blue Titanium zostało zaprojektowane z myślą o profesjonalnej pracy wymagającej maksymalnej precyzji i niezawodności. Doskonale sprawdza się zarówno podczas wykonywania precyzyjnych konturów, jak i codziennego użytkowania, zapewniając płynne i dokładne cięcie. Wykonane z wysokiej jakośc..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 11900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/937/minigallery/thumb_fe74eae9dedd9a774b04510ab235bf9a.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/937/minigallery/thumb_xlarge_fe74eae9dedd9a774b04510ab235bf9a.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/937/minigallery/original_fe74eae9dedd9a774b04510ab235bf9a.png"
+                            PROD_ZESTAW_OSTRZY_STYLE_CRAFT_X_PR:
+                                code: "PROD_ZESTAW_OSTRZY_STYLE_CRAFT_X_PR"
+                                name: "Zestaw ostrzy StyleCraft X-Pro DLC WIDE + The One"
+                                slug: "zestaw-ostrzy-style-craft-x-pro-dlc-wide-the-one"
+                                tax_category: "TAX_23"
+                                main_taxon: "TRIMMERS"
+                                taxons: ["TRIMMERS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Kompatybilne z : Hitter, X-evo, Cyborg, Protege, Xceed, Cruiser, Saber, Instinct, Rebel, Boosted, Reign, Hitter Up"
+                                description: "Profesjonalne ostrze zostało zaprojektowane z myślą o maksymalnej precyzji, trwałości i wydajności podczas codziennej pracy. Dzięki głębokim zębom zapewnia płynne, dokładne cięcie oraz wyjątkowo ostre wykończenie, spełniając oczekiwania najbardziej wymagających barberów i fryzjerów. Powłoka Black Di..."
+                                product_attributes:
+                                    BRAND: "StyleCraft"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 24900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/936/minigallery/thumb_ca4a9d848f1346d29e1312063580ae59.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/936/minigallery/thumb_xlarge_ca4a9d848f1346d29e1312063580ae59.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/936/minigallery/original_ca4a9d848f1346d29e1312063580ae59.png"
+                            PROD_ZESTAW_OSTRZY_ECHO_MIM:
+                                code: "PROD_ZESTAW_OSTRZY_ECHO_MIM"
+                                name: "Zestaw ostrzy ECHO MIM"
+                                slug: "zestaw-ostrzy-echo-mim"
+                                tax_category: "TAX_23"
+                                main_taxon: "PARTS"
+                                taxons: ["PARTS"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "kompatybilne z : Alpha, Boosted , Rebel, Cyborg, X-ergo, Golden gun, Protege, Ryde, Boosted Up, Alpha Up, Neo Protege, Xceed, Shorty, Saber, Saber 2.0, Mythic, Instinct , Instinct X , Instinct Metal, Reign"
+                                description: "Zestaw ostrzy został zaprojektowany z myślą o maksymalnej precyzji i niezawodności podczas codziennej pracy. Zawiera stałe ostrze ECHO MIM (Metal Injection Molding), ruchome ostrze Shallow, sprężynę CoolFlex oraz komplet śrub montażowych, tworząc kompletny zestaw gotowy do instalacji. Technologia Me..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 25900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/934/minigallery/thumb_be30270d2ced88b4c303aa97a0b267cb.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/934/minigallery/thumb_xlarge_be30270d2ced88b4c303aa97a0b267cb.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/934/minigallery/original_be30270d2ced88b4c303aa97a0b267cb.jpg"
+                            PROD_NASADKI_DYSTANSOWE_THIGHT_GUAR:
+                                code: "PROD_NASADKI_DYSTANSOWE_THIGHT_GUAR"
+                                name: "Nasadki dystansowe Tight Guards - różowe"
+                                slug: "nasadki-dystansowe-thight-guards-rozowe"
+                                tax_category: "TAX_23"
+                                main_taxon: "ACCESSORIES"
+                                taxons: ["ACCESSORIES"]
+                                channels: ["GAMMA_PIU_PL"]
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 14900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/975/minigallery/thumb_1a6bdf7602ad12e67314e806db2e9e6e.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/975/minigallery/thumb_xlarge_1a6bdf7602ad12e67314e806db2e9e6e.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/975/minigallery/original_1a6bdf7602ad12e67314e806db2e9e6e.jpg"
+                            PROD_GRZEBIEN_FLOW_COMB_NIEBIESKI:
+                                code: "PROD_GRZEBIEN_FLOW_COMB_NIEBIESKI"
+                                name: "Grzebień Flow Comb - niebieski"
+                                slug: "grzebien-flow-comb-niebieski"
+                                tax_category: "TAX_23"
+                                main_taxon: "ACCESSORIES"
+                                taxons: ["ACCESSORIES"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Idealny grzebień do strzyżenia"
+                                description: "Grzebień do strzyżenia Flow Comb zaprojektowany specjalnie do używania z maszynkami do strzyżenia. Pofałdowania na zębach utrzymują włosy napięte, zapewniając równe cięcie. Wysoce odporne tworzywo sztuczne z włókien węglowych. Długość - 24 cm z antypoślizgowym uchwytem...."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 3900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/929/minigallery/thumb_ebb40542e1aa7390603aadece4b4bfce.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/929/minigallery/thumb_xlarge_ebb40542e1aa7390603aadece4b4bfce.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/929/minigallery/original_ebb40542e1aa7390603aadece4b4bfce.jpg"
+                            PROD_ZESTAW_GRZEBIENI_POMARANCZOWY:
+                                code: "PROD_ZESTAW_GRZEBIENI_POMARANCZOWY"
+                                name: "Zestaw grzebieni - pomarańczowy"
+                                slug: "zestaw-grzebieni-pomaranczowy"
+                                tax_category: "TAX_23"
+                                main_taxon: "ACCESSORIES"
+                                taxons: ["ACCESSORIES"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Zestaw grzebieni z torbą do przechowywania"
+                                description: "Wykonane z włókna węglowego, ABS i PEI, są trwałe i nadają się do włosów mokrych i suchych, zarówno prostych, jak i kręconych. grzebień RAKE wykonany z włókna węglowego. Grzebień CLIPPER z tworzywa ABS. Grzebień do brody, grzebień do wykończeń, grzebień sekcyjny i grzebień nożycowy wykonane z tworzy..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 23900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/924/minigallery/thumb_b4e3228d01b54c60c9923ffcc5ebffd8.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/924/minigallery/thumb_xlarge_b4e3228d01b54c60c9923ffcc5ebffd8.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/924/minigallery/original_b4e3228d01b54c60c9923ffcc5ebffd8.jpg"
+                            PROD_ZESTAW_GRZEBIENI_ZIELONY:
+                                code: "PROD_ZESTAW_GRZEBIENI_ZIELONY"
+                                name: "Zestaw grzebieni - zielony"
+                                slug: "zestaw-grzebieni-zielony"
+                                tax_category: "TAX_23"
+                                main_taxon: "ACCESSORIES"
+                                taxons: ["ACCESSORIES"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Zestaw grzebieni z torbą do przechowywania"
+                                description: "Wykonane z włókna węglowego, ABS i PEI, są trwałe i nadają się do włosów mokrych i suchych, zarówno prostych, jak i kręconych. grzebień RAKE wykonany z włókna węglowego. Grzebień CLIPPER z tworzywa ABS. Grzebień do brody, grzebień do wykończeń, grzebień sekcyjny i grzebień nożycowy wykonane z tworzy..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 23900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/923/minigallery/thumb_47918fad779c975a645d8d29e360af31.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/923/minigallery/thumb_xlarge_47918fad779c975a645d8d29e360af31.png"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/923/minigallery/original_47918fad779c975a645d8d29e360af31.png"
+                            PROD_GUMOWE_GRIPY_ROZOWY:
+                                code: "PROD_GUMOWE_GRIPY_ROZOWY"
+                                name: "Gumowe Gripy - różowy"
+                                slug: "gumowe-gripy-rozowy"
+                                tax_category: "TAX_23"
+                                main_taxon: "ACCESSORIES"
+                                taxons: ["ACCESSORIES"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Nakładki ochronne i antypoślizgowe na maszynkę, lub golarkę"
+                                description: "Unieruchamia maszynkę, trymer lub golarkę leżącą na płaskiej powierzchni. Poprawia kontrolę i chwyt urządzenia. Nadaje się do maszynek golarek i trymerów...."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 6900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/928/minigallery/thumb_de3bef53121720a0a5e714ba2674d87b.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/928/minigallery/thumb_xlarge_de3bef53121720a0a5e714ba2674d87b.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/928/minigallery/original_de3bef53121720a0a5e714ba2674d87b.jpg"
+                            PROD_GUMOWE_GRIPY_ZIELONY:
+                                code: "PROD_GUMOWE_GRIPY_ZIELONY"
+                                name: "Gumowe Gripy - zielony"
+                                slug: "gumowe-gripy-zielony"
+                                tax_category: "TAX_23"
+                                main_taxon: "ACCESSORIES"
+                                taxons: ["ACCESSORIES"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Nakładki ochronne i antypoślizgowe na maszynkę, lub golarkę"
+                                description: "Unieruchamia maszynkę, trymer lub golarkę leżącą na płaskiej powierzchni. Poprawia kontrolę i chwyt urządzenia. Nadaje się do maszynek golarek i trymerów...."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 6900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/927/minigallery/thumb_3f9ad192f5157fa05047c9bd928e1557.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/927/minigallery/thumb_xlarge_3f9ad192f5157fa05047c9bd928e1557.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/927/minigallery/original_3f9ad192f5157fa05047c9bd928e1557.jpg"
+                            PROD_KONCENTRATOR_AIR_TOUCH_DO_BLOW:
+                                code: "PROD_KONCENTRATOR_AIR_TOUCH_DO_BLOW"
+                                name: "koncentrator AirTouch do Blowvac"
+                                slug: "koncentrator-air-touch-do-blowvac"
+                                tax_category: "TAX_23"
+                                main_taxon: "ACCESSORIES"
+                                taxons: ["ACCESSORIES"]
+                                channels: ["GAMMA_PIU_PL"]
+                                short_description: "Profesjonalna dysza zapewniająca precyzyjny i równomierny strumień powietrza, idealna do techniki rozjaśniania AirTouch."
+                                description: "Zoptymalizowany kształt pozwala strumieniowi powietrza na selektywne oddzielanie krótszych, cieńszych lub uszkodzonych pasm włosów od dłuższych i mocniejszych. Niezbędne narzędzie, które pozwala fryzjerowi pracować z maksymalną wydajnością, gwarantując perfekcyjne rozdzielenie sekcji i doskonałe efe..."
+                                product_attributes:
+                                    BRAND: "Gamma Più"
+                                    WARRANTY: "24 miesiące (konsument) / 12 miesięcy (firma)"
+                                channel_pricings:
+                                    GAMMA_PIU_PL:
+                                        price: 11900
+                                images:
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/939/minigallery/thumb_dc04918a1091abb810924a00319c8b18.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/939/minigallery/thumb_xlarge_dc04918a1091abb810924a00319c8b18.jpg"
+                                    - type: "main"
+                                      path: "https://gammapiu-polska.pl/public/upload/catalog/product/939/minigallery/original_dc04918a1091abb810924a00319c8b18.jpg"
+                admin_user:
+                    options:
+                        custom:
+                            admin:
+                                email: "admin@gammapiu-polska.pl"
+                                password: "sylius123"
+                                first_name: "Admin"
+                                last_name: "GammaPiu"
+                                locale_code: "pl_PL"
+                                api: true
+                shop_user:
+                    options:
+                        custom:
+                            customer:
+                                email: "klient@gammapiu-polska.pl"
+                                password: "sylius123"
+                                first_name: "Jan"
+                                last_name: "Kowalski"
+                                customer_group: null
+                                channel: "GAMMA_PIU_PL"
